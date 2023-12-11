@@ -33,15 +33,6 @@ export class AppController {
   }
 
   @Get('/contacts')
-  async getContacts() {
-    return await this.appService.findContactByParams({
-      query: null,
-      url: this.configService.get<string>('url'),
-      rout: this.configService.get<RoutList>('routs'),
-    });
-  }
-
-  @Get('/contacts')
   async getContactsByParam(@Query('query') query: string | null = null) {
     return await this.appService.findContactByParams({
       query,
