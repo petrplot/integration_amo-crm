@@ -1,7 +1,7 @@
 import { RoutList } from './RoutList';
 
 export type FindContactByParams = {
-  query: string;
+  query: string | null;
   url: string;
   rout: RoutList;
 };

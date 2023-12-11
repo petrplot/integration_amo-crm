@@ -136,11 +136,10 @@ export class AppService {
     try {
       const { query, url, rout } = params;
       let res: Response;
-      if (query) {
-        return (res = await fetch(url + rout.contacts + '/?query=' + query));
-      } else {
+      if (!query) {
         return (res = await fetch(url + rout.contacts));
       }
+      return (res = await fetch(url + rout.contacts + '/?query=' + query));
     } catch (e) {
       console.log(e);
     }
